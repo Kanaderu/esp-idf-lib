@@ -14,7 +14,9 @@
 #include <esp_idf_lib_helpers.h>
 #include "hd44780.h"
 
-#if HELPER_TARGET_VERSION == HELPER_TARGET_VERSION_ESP32_V4
+#if CONFIG_IDF_TARGET_ESP32S2
+#include <esp32s2/rom/ets_sys.h>
+#elif HELPER_TARGET_VERSION == HELPER_TARGET_VERSION_ESP32_V4
 #include <esp32/rom/ets_sys.h>
 #else
 #include <rom/ets_sys.h>
